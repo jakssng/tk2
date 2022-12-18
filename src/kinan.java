@@ -5,13 +5,19 @@ public class kinan {
             Scanner userObj = new Scanner(System.in);
             System.out.print("Masukan Nama Anda [1..25] : ");
             String name = userObj.nextLine();
+            while (name.length()<1 || name.length()>25){
+                System.out.println("Inputan Nama minimal 1-25 Karakter.");
+                System.out.print("Masukan Nama Anda [1..25] : ");
+                name = userObj.nextLine();
+            }
             System.out.print("Masukan NIM Anda [harus 10 karakter] : ");
             String id = userObj.next();
             while (id.length() != 10){
+                System.out.println("Inputan NIM harus 10 karakter");
                 System.out.print("Masukkan NIM Anda [harus 10 karakter]: ");
                 id = userObj.next();
             }
-            System.out.println("Inputan NIM harus 10 karakter dan Nama tidak boleh kosong & melebihi 25 karakter");
+
             System.out.println("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
             System.out.println("\nRegistrasi Sukses.,");
             System.out.println("Selamat Datang " + name + " [NIM : " + id +"].. ^v^");
